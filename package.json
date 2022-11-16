@@ -28,6 +28,7 @@
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^10.0.1",
     "mini-css-extract-plugin": "^2.6.1",
+    "postcss-loader": "^7.0.1",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "webpack": "^5.75.0",

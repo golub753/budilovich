@@ -17,6 +17,18 @@ module.exports = {
                 use: [
                     MiniCss.loader,
                     'css-loader',
+                    {
+                        loader: 'postcss-loader', options: {
+                            postcssOptions: {
+                                // postcss plugins, can be exported to postcss.config.js
+                                plugins() {
+                                    return [
+                                        require('autoprefixer')
+                                    ];
+                                }
+                            }
+                        },
+                    },
                     'sass-loader'
                 ]
             },
@@ -69,7 +81,10 @@ module.exports = {
         new MiniCss({
             filename: 'style.min.css',
         }),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: 'src/index.html',
+            inject: true,
+        })
     ],
     mode: 'production'
 };
